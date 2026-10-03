@@ -2,10 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
-  // =========================================
-  // STATE
-  // =========================================
-
+  
   const [activity, setActivity] = useState(() => {
     return localStorage.getItem("pulse-activity") || "Coding Problems";
   });
@@ -33,10 +30,6 @@ function App() {
   const [action, setAction] = useState("idle");
 
 
-  // =========================================
-  // SAVE ACTIVITY
-  // =========================================
-
   useEffect(() => {
     localStorage.setItem(
       "pulse-activity",
@@ -44,10 +37,6 @@ function App() {
     );
   }, [activity]);
 
-
-  // =========================================
-  // SAVE COUNT
-  // =========================================
 
   useEffect(() => {
     localStorage.setItem(
@@ -57,10 +46,6 @@ function App() {
   }, [count]);
 
 
-  // =========================================
-  // SAVE GOAL
-  // =========================================
-
   useEffect(() => {
     localStorage.setItem(
       "pulse-goal",
@@ -69,18 +54,9 @@ function App() {
   }, [goal]);
 
 
-  // =========================================
-  // ACTIVITY CHANGE
-  // =========================================
-
   const handleActivityChange = (event) => {
     setActivity(event.target.value);
   };
-
-
-  // =========================================
-  // GOAL CHANGE
-  // =========================================
 
   const handleGoalChange = (event) => {
     const value = event.target.value;
@@ -116,10 +92,6 @@ function App() {
   };
 
 
-  // =========================================
-  // GOAL INPUT BLUR
-  // =========================================
-
   const handleGoalBlur = () => {
     if (goalInput === "") {
       setGoalInput("1");
@@ -135,10 +107,6 @@ function App() {
   };
 
 
-  // =========================================
-  // INCREASE
-  // =========================================
-
   const increment = () => {
     setCount((previousCount) =>
       previousCount < goal
@@ -150,10 +118,6 @@ function App() {
   };
 
 
-  // =========================================
-  // DECREASE
-  // =========================================
-
   const decrement = () => {
     setCount((previousCount) =>
       previousCount > 0
@@ -164,21 +128,12 @@ function App() {
     setAction("decrease");
   };
 
-
-  // =========================================
-  // RESET
-  // =========================================
-
   const reset = () => {
     setCount(0);
 
     setAction("reset");
   };
 
-
-  // =========================================
-  // KEYBOARD CONTROLS
-  // =========================================
 
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -247,10 +202,6 @@ function App() {
   }, [goal]);
 
 
-  // =========================================
-  // PROGRESS
-  // =========================================
-
   const progress =
     goal > 0
       ? Math.min((count / goal) * 100, 100)
@@ -264,34 +215,13 @@ function App() {
   const isCompleted =
     count >= goal;
 
-
-  // =========================================
-  // UI
-  // =========================================
-
   return (
     <main className={`app ${action}`}>
-
-      {/* =====================================
-          BACKGROUND
-      ====================================== */}
-
       <div className="ambient ambient-one"></div>
 
       <div className="ambient ambient-two"></div>
 
-
-      {/* =====================================
-          MAIN CARD
-      ====================================== */}
-
       <section className="counter-card">
-
-
-        {/* =====================================
-            HEADER
-        ====================================== */}
-
         <header className="counter-header">
 
           <p className="eyebrow">
@@ -307,11 +237,6 @@ function App() {
           </p>
 
         </header>
-
-
-        {/* =====================================
-            ACTIVITY
-        ====================================== */}
 
         <div className="activity-section">
 
@@ -335,10 +260,6 @@ function App() {
         </div>
 
 
-        {/* =====================================
-            GOAL
-        ====================================== */}
-
         <div className="goal-section">
 
           <span className="goal-label">
@@ -358,10 +279,6 @@ function App() {
 
         </div>
 
-
-        {/* =====================================
-            COUNTER
-        ====================================== */}
 
         <div className="counter-area">
 
@@ -425,9 +342,6 @@ function App() {
         </div>
 
 
-        {/* =====================================
-            BUTTONS
-        ====================================== */}
 
         <div className="controls">
 
@@ -476,9 +390,6 @@ function App() {
         </div>
 
 
-        {/* =====================================
-            PERCENTAGE
-        ====================================== */}
 
         <div className="progress-percentage">
 
@@ -492,10 +403,6 @@ function App() {
 
         </div>
 
-
-        {/* =====================================
-            KEYBOARD CONTROLS
-        ====================================== */}
 
         <div className="keyboard-controls">
 
@@ -523,11 +430,6 @@ function App() {
           </div>
 
         </div>
-
-
-        {/* =====================================
-            SYSTEM STATUS
-        ====================================== */}
 
         <footer className="system-status">
 
