@@ -18,4 +18,4 @@ If you are developing a production application, we recommend using TypeScript wi
 
 ## Live Demo
 
-[Random Number Generator](https://pulse-counter.vercel.app/)
+[Pulse-Counter](https://pulse-counter.vercel.app/)
