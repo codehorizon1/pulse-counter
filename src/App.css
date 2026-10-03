@@ -1,0 +1,2416 @@
+/* =========================================================
+   PULSE — GOAL PROGRESS
+   Complete Responsive App.css
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background: #020307;
+  color: #f7f5ff;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   MAIN APP
+========================================================= */
+
+.app {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      #111022 0%,
+      #080914 28%,
+      #030409 65%,
+      #020307 100%
+    );
+}
+
+
+/* =========================================================
+   CENTRAL ENERGY
+========================================================= */
+
+.app::before {
+  content: "";
+
+  position: absolute;
+
+  width: 950px;
+  height: 950px;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(143, 112, 255, 0.13) 0%,
+      rgba(143, 112, 255, 0.07) 20%,
+      rgba(75, 207, 200, 0.045) 35%,
+      transparent 68%
+    );
+
+  filter: blur(15px);
+
+  animation: backgroundBreath 6s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   LARGE ORBIT
+========================================================= */
+
+.app::after {
+  content: "";
+
+  position: absolute;
+
+  width: 1150px;
+  height: 520px;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-18deg);
+
+  border-radius: 50%;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  border:
+    1px solid rgba(169, 145, 255, 0.16);
+
+  box-shadow:
+    0 0 35px rgba(169, 145, 255, 0.08),
+    inset 0 0 35px rgba(88, 217, 209, 0.025);
+
+  animation:
+    waveMovement 12s ease-in-out infinite alternate;
+}
+
+
+/* =========================================================
+   AMBIENT ORBITS
+========================================================= */
+
+.ambient {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+
+/* Purple orbit */
+
+.ambient-one {
+  width: 950px;
+  height: 430px;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-25deg);
+
+  border:
+    2px solid rgba(169, 145, 255, 0.13);
+
+  box-shadow:
+    0 0 30px rgba(169, 145, 255, 0.08);
+
+  animation:
+    orbitPurple 16s ease-in-out infinite alternate;
+}
+
+
+/* Cyan orbit */
+
+.ambient-two {
+  width: 760px;
+  height: 340px;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(35deg);
+
+  border:
+    1px solid rgba(88, 217, 209, 0.14);
+
+  box-shadow:
+    0 0 30px rgba(88, 217, 209, 0.06);
+
+  animation:
+    orbitCyan 12s ease-in-out infinite alternate;
+}
+
+
+/* =========================================================
+   ORBIT PARTICLES
+========================================================= */
+
+.ambient-one::before {
+  content: "";
+
+  position: absolute;
+
+  width: 9px;
+  height: 9px;
+
+  left: 17%;
+  top: 3%;
+
+  border-radius: 50%;
+
+  background: #a991ff;
+
+  box-shadow:
+    0 0 10px #a991ff,
+    0 0 30px #a991ff,
+    0 0 60px rgba(169, 145, 255, 0.8);
+
+  animation:
+    particlePulse 2.4s ease-in-out infinite;
+}
+
+
+.ambient-one::after {
+  content: "";
+
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+
+  right: 8%;
+  bottom: 18%;
+
+  border-radius: 50%;
+
+  background: #c2b4ff;
+
+  box-shadow:
+    0 0 12px #a991ff,
+    0 0 30px rgba(169, 145, 255, 0.7);
+}
+
+
+.ambient-two::before {
+  content: "";
+
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  left: 5%;
+  top: 44%;
+
+  border-radius: 50%;
+
+  background: #58d9d1;
+
+  box-shadow:
+    0 0 12px #58d9d1,
+    0 0 30px rgba(88, 217, 209, 0.7),
+    0 0 55px rgba(88, 217, 209, 0.4);
+
+  animation:
+    particlePulse 3s ease-in-out infinite;
+}
+
+
+.ambient-two::after {
+  content: "";
+
+  position: absolute;
+
+  width: 4px;
+  height: 4px;
+
+  right: 16%;
+  bottom: 5%;
+
+  border-radius: 50%;
+
+  background: #58d9d1;
+
+  box-shadow:
+    0 0 10px #58d9d1,
+    0 0 25px rgba(88, 217, 209, 0.7);
+}
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.counter-card {
+  position: relative;
+
+  z-index: 10;
+
+  width: min(560px, calc(100% - 32px));
+
+  max-height: calc(100vh - 24px);
+
+  padding: 36px 48px 24px;
+
+  display: flex;
+  flex-direction: column;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 32px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(16, 16, 24, 0.94),
+      rgba(6, 7, 12, 0.97)
+    );
+
+  box-shadow:
+    0 40px 120px rgba(0, 0, 0, 0.7),
+    0 0 80px rgba(111, 82, 220, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(25px);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   CARD TOP LIGHT
+========================================================= */
+
+.counter-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 12%;
+
+  width: 76%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(169, 145, 255, 0.65),
+      rgba(88, 217, 209, 0.3),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   CARD PARTICLES
+========================================================= */
+
+.counter-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 4px;
+  height: 4px;
+
+  top: 17%;
+  right: 13%;
+
+  border-radius: 50%;
+
+  background: #a991ff;
+
+  box-shadow:
+    -310px 80px 0 rgba(169, 145, 255, 0.5),
+    -270px 310px 0 rgba(88, 217, 209, 0.35),
+    240px 220px 0 rgba(169, 145, 255, 0.4),
+    -190px 400px 0 rgba(88, 217, 209, 0.3),
+    180px 50px 0 rgba(169, 145, 255, 0.3);
+
+  opacity: 0.7;
+
+  animation:
+    particlesMove 7s ease-in-out infinite alternate;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.counter-header {
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 5px;
+
+  color: #a991ff;
+
+  text-shadow:
+    0 0 18px rgba(169, 145, 255, 0.35);
+}
+
+.counter-header h1 {
+  margin: 0;
+
+  font-size:
+    clamp(38px, 6vw, 52px);
+
+  font-weight: 700;
+
+  letter-spacing: -2.5px;
+
+  line-height: 1;
+
+  color: #f7f5ff;
+}
+
+.description {
+  margin: 15px 0 0;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  color:
+    rgba(245, 243, 255, 0.42);
+}
+
+
+/* =========================================================
+   ACTIVITY SECTION
+========================================================= */
+
+.activity-section {
+  width: 100%;
+
+  margin-top: 23px;
+
+  text-align: center;
+}
+
+.activity-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+
+  color:
+    rgba(245, 243, 255, 0.36);
+}
+
+.activity-input {
+  width: 100%;
+
+  height: 47px;
+
+  padding: 0 18px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 14px;
+
+  outline: none;
+
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  color: #f5f3ff;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  text-align: center;
+
+  transition:
+    border-color 220ms ease,
+    background 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.activity-input::placeholder {
+  color:
+    rgba(245, 243, 255, 0.20);
+}
+
+.activity-input:hover {
+  border-color:
+    rgba(169, 145, 255, 0.30);
+}
+
+.activity-input:focus {
+  border-color:
+    rgba(169, 145, 255, 0.60);
+
+  background:
+    rgba(169, 145, 255, 0.045);
+
+  box-shadow:
+    0 0 0 4px rgba(169, 145, 255, 0.06),
+    0 0 25px rgba(169, 145, 255, 0.08);
+}
+
+
+/* =========================================================
+   GOAL SECTION
+========================================================= */
+
+.goal-section {
+  width: 220px;
+
+  margin: 17px auto 0;
+
+  text-align: center;
+}
+
+.goal-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+
+  color:
+    rgba(245, 243, 255, 0.36);
+}
+
+.goal-input {
+  width: 100%;
+
+  height: 47px;
+
+  padding: 0 18px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.10);
+
+  border-radius: 14px;
+
+  outline: none;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  color: #f5f3ff;
+
+  text-align: center;
+
+  font-family: inherit;
+
+  font-size: 23px;
+
+  font-weight: 600;
+
+  appearance: textfield;
+
+  transition:
+    border-color 220ms ease,
+    background 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.goal-input::-webkit-inner-spin-button,
+.goal-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+
+  margin: 0;
+}
+
+.goal-input:hover {
+  border-color:
+    rgba(169, 145, 255, 0.30);
+}
+
+.goal-input:focus {
+  border-color:
+    rgba(169, 145, 255, 0.65);
+
+  background:
+    rgba(169, 145, 255, 0.06);
+
+  box-shadow:
+    0 0 0 4px rgba(169, 145, 255, 0.06),
+    0 0 28px rgba(169, 145, 255, 0.10);
+}
+
+
+/* =========================================================
+   COUNTER AREA
+========================================================= */
+
+.counter-area {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  margin-top: 15px;
+}
+
+
+/* =========================================================
+   COUNTER DISPLAY
+========================================================= */
+
+.counter-display {
+  position: relative;
+
+  width: 190px;
+  height: 190px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   COUNTER CORE
+========================================================= */
+
+.counter-display::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 16px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(35, 31, 62, 0.70),
+      rgba(5, 6, 10, 0.98) 70%
+    );
+
+  box-shadow:
+    inset 0 0 50px rgba(0, 0, 0, 0.80),
+    0 0 40px rgba(169, 145, 255, 0.07);
+
+  z-index: 1;
+
+  animation:
+    coreBreathing 4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   PROGRESS RING
+========================================================= */
+
+.counter-ring {
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: 50%;
+
+  background:
+    conic-gradient(
+      from -90deg,
+      #58d9d1 0%,
+      #a991ff var(--progress),
+      rgba(255, 255, 255, 0.05) var(--progress),
+      rgba(255, 255, 255, 0.05) 100%
+    );
+
+  -webkit-mask:
+    radial-gradient(
+      farthest-side,
+      transparent calc(100% - 2px),
+      #000 calc(100% - 1px)
+    );
+
+  mask:
+    radial-gradient(
+      farthest-side,
+      transparent calc(100% - 2px),
+      #000 calc(100% - 1px)
+    );
+
+  filter:
+    drop-shadow(
+      0 0 8px rgba(169, 145, 255, 0.35)
+    );
+
+  transition:
+    background 500ms ease,
+    filter 500ms ease;
+}
+
+
+/* =========================================================
+   INNER ORBIT
+========================================================= */
+
+.counter-display::after {
+  content: "";
+
+  position: absolute;
+
+  width: 135px;
+  height: 135px;
+
+  border:
+    1px solid rgba(169, 145, 255, 0.08);
+
+  border-radius: 50%;
+
+  z-index: 2;
+
+  animation:
+    innerRotation 15s linear infinite;
+}
+
+
+/* =========================================================
+   COUNTER NUMBER
+========================================================= */
+
+.counter-number {
+  position: relative;
+
+  z-index: 5;
+
+  font-size: 72px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: -5px;
+
+  color: #f8f6ff;
+
+  text-shadow:
+    0 0 35px rgba(169, 145, 255, 0.18);
+}
+
+
+/* =========================================================
+   PULSE POINT
+========================================================= */
+
+.pulse-wave {
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  top: 6px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  background: #a991ff;
+
+  box-shadow:
+    0 0 12px #a991ff,
+    0 0 30px rgba(169, 145, 255, 0.65);
+
+  z-index: 6;
+
+  animation:
+    pulsePoint 2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   PROGRESS TEXT
+========================================================= */
+
+.progress-text {
+  margin-top: 1px;
+
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 5px;
+
+  font-size: 16px;
+
+  font-weight: 500;
+
+  color:
+    rgba(245, 243, 255, 0.72);
+}
+
+.progress-divider {
+  color:
+    rgba(245, 243, 255, 0.20);
+}
+
+
+/* =========================================================
+   STATUS MESSAGE
+========================================================= */
+
+.status-message {
+  margin-top: 9px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.8px;
+
+  text-transform: uppercase;
+
+  color:
+    rgba(245, 243, 255, 0.35);
+}
+
+.status-icon {
+  color: #a991ff;
+
+  text-shadow:
+    0 0 10px rgba(169, 145, 255, 0.8);
+}
+
+.status-message.completed {
+  color: #58d9d1;
+}
+
+.status-message.completed .status-icon {
+  color: #58d9d1;
+
+  text-shadow:
+    0 0 10px rgba(88, 217, 209, 0.8);
+}
+
+
+/* =========================================================
+   CONTROL BUTTONS
+========================================================= */
+
+.controls {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 0.78fr 1fr;
+
+  gap: 10px;
+
+  margin-top: 21px;
+}
+
+.control-button {
+  height: 47px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.03);
+
+  color:
+    rgba(245, 243, 255, 0.78);
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.control-button:hover {
+  transform:
+    translateY(-2px);
+
+  background:
+    rgba(255, 255, 255, 0.065);
+
+  border-color:
+    rgba(255, 255, 255, 0.15);
+}
+
+.control-button:active {
+  transform:
+    scale(0.98);
+}
+
+.control-button.increase {
+  border-color:
+    rgba(88, 217, 209, 0.13);
+}
+
+.control-button.increase:hover {
+  border-color:
+    rgba(88, 217, 209, 0.40);
+
+  box-shadow:
+    0 0 25px rgba(88, 217, 209, 0.08);
+}
+
+.button-icon {
+  margin: 0 4px;
+
+  font-size: 17px;
+}
+
+.decrease .button-icon {
+  color: #a991ff;
+}
+
+.increase .button-icon {
+  color: #58d9d1;
+}
+
+
+/* =========================================================
+   PERCENTAGE
+========================================================= */
+
+.progress-percentage {
+  margin-top: 11px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: baseline;
+
+  gap: 6px;
+}
+
+.progress-percentage span:first-child {
+  font-size: 12px;
+
+  font-weight: 700;
+
+  color: #a991ff;
+
+  text-shadow:
+    0 0 15px rgba(169, 145, 255, 0.25);
+}
+
+.progress-percentage span:last-child {
+  font-size: 7px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  color:
+    rgba(245, 243, 255, 0.27);
+}
+
+
+/* =========================================================
+   KEYBOARD CONTROLS
+========================================================= */
+
+.keyboard-controls {
+  margin-top: 12px;
+
+  text-align: center;
+}
+
+.keyboard-title {
+  margin: 0 0 7px;
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  color:
+    rgba(245, 243, 255, 0.25);
+}
+
+.keyboard-hints {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 15px;
+}
+
+.keyboard-hint {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  font-size: 8px;
+
+  color:
+    rgba(245, 243, 255, 0.34);
+}
+
+.keyboard-hint kbd {
+  min-width: 24px;
+
+  height: 24px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 7px;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  color:
+    rgba(245, 243, 255, 0.70);
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   SYSTEM STATUS
+========================================================= */
+
+.system-status {
+  margin-top: 10px;
+
+  padding-top: 9px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.055);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color:
+    rgba(245, 243, 255, 0.25);
+
+  font-size: 7px;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+.status-dot {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #58d9d1;
+
+  box-shadow:
+    0 0 12px #58d9d1;
+
+  animation:
+    statusPulse 2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   COUNTER ACTION ANIMATIONS
+========================================================= */
+
+.counter-display.increase .counter-number {
+  animation:
+    numberIncrease 220ms ease;
+}
+
+.counter-display.decrease .counter-number {
+  animation:
+    numberDecrease 220ms ease;
+}
+
+.counter-display.reset .counter-number {
+  animation:
+    numberReset 300ms ease;
+}
+
+
+/* =========================================================
+   LAPTOP / SHORT DESKTOP
+   Larger than previous version
+========================================================= */
+
+@media (min-width: 901px) and (max-height: 850px) {
+
+  .counter-card {
+    width: min(610px, calc(100% - 32px));
+
+    max-height: calc(100vh - 18px);
+
+    padding: 27px 48px 17px;
+
+    border-radius: 30px;
+  }
+
+
+  /* HEADER */
+
+  .eyebrow {
+    margin-bottom: 10px;
+
+    font-size: 10px;
+
+    letter-spacing: 4.5px;
+  }
+
+  .counter-header h1 {
+    font-size: 45px;
+
+    letter-spacing: -2.3px;
+  }
+
+  .description {
+    margin-top: 10px;
+
+    font-size: 12px;
+  }
+
+
+  /* ACTIVITY */
+
+  .activity-section {
+    margin-top: 16px;
+  }
+
+  .activity-label {
+    margin-bottom: 6px;
+
+    font-size: 8px;
+  }
+
+  .activity-input {
+    height: 43px;
+
+    border-radius: 12px;
+
+    font-size: 13px;
+  }
+
+
+  /* GOAL */
+
+  .goal-section {
+    width: 205px;
+
+    margin-top: 11px;
+  }
+
+  .goal-label {
+    margin-bottom: 6px;
+
+    font-size: 8px;
+  }
+
+  .goal-input {
+    height: 43px;
+
+    border-radius: 12px;
+
+    font-size: 22px;
+  }
+
+
+  /* COUNTER */
+
+  .counter-area {
+    margin-top: 7px;
+  }
+
+  .counter-display {
+    width: 165px;
+    height: 165px;
+  }
+
+  .counter-display::before {
+    inset: 14px;
+  }
+
+  .counter-display::after {
+    width: 120px;
+    height: 120px;
+  }
+
+  .counter-number {
+    font-size: 62px;
+
+    letter-spacing: -4px;
+  }
+
+  .pulse-wave {
+    width: 7px;
+    height: 7px;
+
+    top: 5px;
+  }
+
+
+  /* PROGRESS */
+
+  .progress-text {
+    margin-top: 0;
+
+    font-size: 15px;
+  }
+
+  .status-message {
+    margin-top: 5px;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+  }
+
+
+  /* BUTTONS */
+
+  .controls {
+    margin-top: 12px;
+
+    gap: 9px;
+  }
+
+  .control-button {
+    height: 43px;
+
+    border-radius: 12px;
+
+    font-size: 12px;
+  }
+
+  .button-icon {
+    font-size: 16px;
+  }
+
+
+  /* PERCENTAGE */
+
+  .progress-percentage {
+    margin-top: 7px;
+  }
+
+  .progress-percentage span:first-child {
+    font-size: 11px;
+  }
+
+  .progress-percentage span:last-child {
+    font-size: 7px;
+  }
+
+
+  /* KEYBOARD */
+
+  .keyboard-controls {
+    margin-top: 7px;
+  }
+
+  .keyboard-title {
+    margin-bottom: 5px;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+  }
+
+  .keyboard-hints {
+    gap: 14px;
+  }
+
+  .keyboard-hint {
+    gap: 5px;
+
+    font-size: 8px;
+  }
+
+  .keyboard-hint kbd {
+    min-width: 23px;
+
+    height: 23px;
+
+    border-radius: 6px;
+
+    font-size: 9px;
+  }
+
+
+  /* SYSTEM STATUS */
+
+  .system-status {
+    margin-top: 6px;
+
+    padding-top: 7px;
+
+    font-size: 7px;
+
+    letter-spacing: 1.3px;
+  }
+
+  .status-dot {
+    width: 4px;
+    height: 4px;
+  }
+}
+
+
+/* =========================================================
+   VERY SHORT LAPTOP
+========================================================= */
+
+@media (min-width: 901px) and (max-height: 720px) {
+
+  .counter-card {
+    width: min(590px, calc(100% - 30px));
+
+    padding: 20px 44px 12px;
+
+    border-radius: 27px;
+  }
+
+
+  .eyebrow {
+    margin-bottom: 7px;
+
+    font-size: 9px;
+  }
+
+  .counter-header h1 {
+    font-size: 39px;
+
+    letter-spacing: -2px;
+  }
+
+  .description {
+    margin-top: 7px;
+
+    font-size: 10px;
+  }
+
+
+  .activity-section {
+    margin-top: 10px;
+  }
+
+  .activity-label {
+    margin-bottom: 4px;
+
+    font-size: 7px;
+  }
+
+  .activity-input {
+    height: 37px;
+
+    font-size: 11px;
+  }
+
+
+  .goal-section {
+    width: 185px;
+
+    margin-top: 7px;
+  }
+
+  .goal-label {
+    margin-bottom: 4px;
+
+    font-size: 7px;
+  }
+
+  .goal-input {
+    height: 37px;
+
+    font-size: 19px;
+  }
+
+
+  .counter-area {
+    margin-top: 4px;
+  }
+
+  .counter-display {
+    width: 140px;
+    height: 140px;
+  }
+
+  .counter-display::before {
+    inset: 12px;
+  }
+
+  .counter-display::after {
+    width: 102px;
+    height: 102px;
+  }
+
+  .counter-number {
+    font-size: 53px;
+
+    letter-spacing: -3px;
+  }
+
+
+  .progress-text {
+    font-size: 13px;
+  }
+
+  .status-message {
+    margin-top: 3px;
+
+    font-size: 7px;
+  }
+
+
+  .controls {
+    margin-top: 8px;
+
+    gap: 7px;
+  }
+
+  .control-button {
+    height: 37px;
+
+    border-radius: 10px;
+
+    font-size: 10px;
+  }
+
+  .button-icon {
+    font-size: 13px;
+  }
+
+
+  .progress-percentage {
+    margin-top: 4px;
+  }
+
+  .progress-percentage span:first-child {
+    font-size: 10px;
+  }
+
+  .progress-percentage span:last-child {
+    font-size: 6px;
+  }
+
+
+  .keyboard-controls {
+    margin-top: 4px;
+  }
+
+  .keyboard-title {
+    margin-bottom: 3px;
+
+    font-size: 6px;
+  }
+
+  .keyboard-hints {
+    gap: 11px;
+  }
+
+  .keyboard-hint {
+    gap: 4px;
+
+    font-size: 7px;
+  }
+
+  .keyboard-hint kbd {
+    min-width: 21px;
+
+    height: 21px;
+
+    font-size: 8px;
+  }
+
+
+  .system-status {
+    margin-top: 4px;
+
+    padding-top: 5px;
+
+    font-size: 6px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+  .counter-card {
+    width: min(540px, calc(100% - 32px));
+
+    max-height: calc(100vh - 12px);
+
+    padding: 22px 36px 14px;
+
+    border-radius: 28px;
+  }
+
+
+  .eyebrow {
+    margin-bottom: 8px;
+
+    font-size: 9px;
+  }
+
+  .counter-header h1 {
+    font-size: 38px;
+
+    letter-spacing: -2px;
+  }
+
+  .description {
+    margin-top: 9px;
+
+    font-size: 11px;
+  }
+
+
+  .activity-section {
+    margin-top: 15px;
+  }
+
+  .activity-label {
+    margin-bottom: 5px;
+
+    font-size: 7px;
+  }
+
+  .activity-input {
+    height: 40px;
+
+    font-size: 12px;
+  }
+
+
+  .goal-section {
+    width: 190px;
+
+    margin-top: 9px;
+  }
+
+  .goal-label {
+    margin-bottom: 5px;
+
+    font-size: 7px;
+  }
+
+  .goal-input {
+    height: 40px;
+
+    font-size: 20px;
+  }
+
+
+  .counter-area {
+    margin-top: 6px;
+  }
+
+  .counter-display {
+    width: 140px;
+    height: 140px;
+  }
+
+  .counter-display::before {
+    inset: 12px;
+  }
+
+  .counter-display::after {
+    width: 101px;
+    height: 101px;
+  }
+
+  .counter-number {
+    font-size: 53px;
+  }
+
+
+  .progress-text {
+    font-size: 13px;
+  }
+
+  .status-message {
+    margin-top: 4px;
+
+    font-size: 7px;
+  }
+
+
+  .controls {
+    margin-top: 9px;
+
+    gap: 7px;
+  }
+
+  .control-button {
+    height: 39px;
+
+    font-size: 11px;
+  }
+
+
+  .progress-percentage {
+    margin-top: 5px;
+  }
+
+
+  .keyboard-controls {
+    margin-top: 5px;
+  }
+
+  .keyboard-title {
+    margin-bottom: 4px;
+
+    font-size: 6px;
+  }
+
+  .keyboard-hints {
+    gap: 10px;
+  }
+
+  .keyboard-hint {
+    font-size: 7px;
+  }
+
+  .keyboard-hint kbd {
+    min-width: 21px;
+
+    height: 21px;
+
+    font-size: 8px;
+  }
+
+
+  .system-status {
+    margin-top: 5px;
+
+    padding-top: 6px;
+
+    font-size: 6px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .app {
+    width: 100%;
+
+    height: 100vh;
+
+    min-height: 100vh;
+
+    align-items: center;
+
+    justify-content: center;
+  }
+
+
+  .counter-card {
+    width: calc(100% - 16px);
+
+    max-height: calc(100vh - 8px);
+
+    padding: 18px 20px 14px;
+
+    border-radius: 24px;
+
+    overflow-y: auto;
+
+    scrollbar-width: none;
+  }
+
+  .counter-card::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .eyebrow {
+    margin-bottom: 8px;
+
+    font-size: 8px;
+
+    letter-spacing: 4px;
+  }
+
+  .counter-header h1 {
+    font-size: 31px;
+
+    letter-spacing: -1.7px;
+  }
+
+  .description {
+    margin-top: 8px;
+
+    font-size: 10px;
+  }
+
+
+  .activity-section {
+    margin-top: 14px;
+  }
+
+  .activity-label {
+    margin-bottom: 5px;
+
+    font-size: 7px;
+  }
+
+  .activity-input {
+    height: 40px;
+
+    border-radius: 11px;
+
+    font-size: 12px;
+  }
+
+
+  .goal-section {
+    width: 165px;
+
+    margin-top: 9px;
+  }
+
+  .goal-label {
+    margin-bottom: 5px;
+
+    font-size: 7px;
+  }
+
+  .goal-input {
+    height: 40px;
+
+    border-radius: 11px;
+
+    font-size: 20px;
+  }
+
+
+  .counter-area {
+    margin-top: 7px;
+  }
+
+  .counter-display {
+    width: 135px;
+    height: 135px;
+  }
+
+  .counter-display::before {
+    inset: 12px;
+  }
+
+  .counter-display::after {
+    width: 98px;
+    height: 98px;
+  }
+
+  .counter-number {
+    font-size: 51px;
+
+    letter-spacing: -3px;
+  }
+
+
+  .progress-text {
+    font-size: 13px;
+  }
+
+  .status-message {
+    margin-top: 6px;
+
+    font-size: 7px;
+  }
+
+
+  .controls {
+    grid-template-columns:
+      1fr 0.8fr 1fr;
+
+    gap: 6px;
+
+    margin-top: 11px;
+  }
+
+  .control-button {
+    height: 40px;
+
+    padding: 0 3px;
+
+    border-radius: 11px;
+
+    font-size: 10px;
+  }
+
+  .button-icon {
+    font-size: 14px;
+
+    margin: 0 2px;
+  }
+
+
+  .progress-percentage {
+    margin-top: 7px;
+  }
+
+  .progress-percentage span:first-child {
+    font-size: 10px;
+  }
+
+  .progress-percentage span:last-child {
+    font-size: 6px;
+  }
+
+
+  .keyboard-controls {
+    margin-top: 7px;
+  }
+
+  .keyboard-title {
+    margin-bottom: 5px;
+
+    font-size: 6px;
+  }
+
+  .keyboard-hints {
+    gap: 7px;
+  }
+
+  .keyboard-hint {
+    gap: 4px;
+
+    font-size: 6px;
+  }
+
+  .keyboard-hint kbd {
+    min-width: 20px;
+
+    height: 20px;
+
+    border-radius: 6px;
+
+    font-size: 8px;
+  }
+
+
+  .system-status {
+    margin-top: 7px;
+
+    padding-top: 7px;
+
+    font-size: 6px;
+  }
+
+
+  .ambient-one {
+    width: 650px;
+    height: 300px;
+  }
+
+  .ambient-two {
+    width: 500px;
+    height: 230px;
+  }
+
+  .app::after {
+    width: 760px;
+    height: 360px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 390px) {
+
+  .counter-card {
+    width: calc(100% - 10px);
+
+    padding: 15px 15px 11px;
+
+    border-radius: 21px;
+  }
+
+
+  .counter-header h1 {
+    font-size: 28px;
+
+    letter-spacing: -1.5px;
+  }
+
+  .description {
+    font-size: 9px;
+  }
+
+
+  .activity-section {
+    margin-top: 11px;
+  }
+
+  .activity-input {
+    height: 37px;
+
+    font-size: 11px;
+  }
+
+
+  .goal-section {
+    width: 150px;
+
+    margin-top: 7px;
+  }
+
+  .goal-input {
+    height: 37px;
+
+    font-size: 18px;
+  }
+
+
+  .counter-area {
+    margin-top: 4px;
+  }
+
+  .counter-display {
+    width: 120px;
+    height: 120px;
+  }
+
+  .counter-display::before {
+    inset: 10px;
+  }
+
+  .counter-display::after {
+    width: 88px;
+    height: 88px;
+  }
+
+  .counter-number {
+    font-size: 46px;
+  }
+
+
+  .progress-text {
+    font-size: 11px;
+  }
+
+  .status-message {
+    margin-top: 4px;
+
+    font-size: 6px;
+  }
+
+
+  .controls {
+    gap: 5px;
+
+    margin-top: 8px;
+  }
+
+  .control-button {
+    height: 37px;
+
+    font-size: 9px;
+
+    border-radius: 9px;
+  }
+
+
+  .progress-percentage {
+    margin-top: 5px;
+  }
+
+
+  .keyboard-controls {
+    margin-top: 5px;
+  }
+
+  .keyboard-hints {
+    gap: 5px;
+  }
+
+  .keyboard-hint {
+    font-size: 5.5px;
+  }
+
+  .keyboard-hint kbd {
+    min-width: 19px;
+
+    height: 19px;
+
+    font-size: 7px;
+  }
+
+
+  .system-status {
+    margin-top: 5px;
+
+    padding-top: 5px;
+
+    font-size: 5.5px;
+  }
+}
+
+
+/* =========================================================
+   VERY SHORT MOBILE
+========================================================= */
+
+@media (max-width: 600px) and (max-height: 720px) {
+
+  .counter-card {
+    padding-top: 12px;
+
+    padding-bottom: 9px;
+  }
+
+  .eyebrow {
+    margin-bottom: 5px;
+  }
+
+  .counter-header h1 {
+    font-size: 27px;
+  }
+
+  .description {
+    margin-top: 5px;
+  }
+
+  .activity-section {
+    margin-top: 9px;
+  }
+
+  .goal-section {
+    margin-top: 6px;
+  }
+
+  .counter-area {
+    margin-top: 3px;
+  }
+
+  .counter-display {
+    width: 112px;
+    height: 112px;
+  }
+
+  .counter-display::before {
+    inset: 9px;
+  }
+
+  .counter-display::after {
+    width: 82px;
+    height: 82px;
+  }
+
+  .counter-number {
+    font-size: 42px;
+  }
+
+  .status-message {
+    margin-top: 3px;
+  }
+
+  .controls {
+    margin-top: 7px;
+  }
+
+  .progress-percentage {
+    margin-top: 4px;
+  }
+
+  .keyboard-controls {
+    margin-top: 4px;
+  }
+
+  .system-status {
+    margin-top: 4px;
+
+    padding-top: 5px;
+  }
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes backgroundBreath {
+
+  0%,
+  100% {
+    transform:
+      translate(-50%, -50%)
+      scale(0.95);
+
+    opacity: 0.65;
+  }
+
+  50% {
+    transform:
+      translate(-50%, -50%)
+      scale(1.08);
+
+    opacity: 1;
+  }
+}
+
+
+@keyframes waveMovement {
+
+  0% {
+    transform:
+      translate(-50%, -50%)
+      rotate(-18deg)
+      scale(0.94);
+  }
+
+  100% {
+    transform:
+      translate(-50%, -50%)
+      rotate(-8deg)
+      scale(1.08);
+  }
+}
+
+
+@keyframes orbitPurple {
+
+  0% {
+    transform:
+      translate(-50%, -50%)
+      rotate(-25deg)
+      scale(0.95);
+  }
+
+  100% {
+    transform:
+      translate(-50%, -50%)
+      rotate(-8deg)
+      scale(1.08);
+  }
+}
+
+
+@keyframes orbitCyan {
+
+  0% {
+    transform:
+      translate(-50%, -50%)
+      rotate(35deg)
+      scale(1);
+  }
+
+  100% {
+    transform:
+      translate(-50%, -50%)
+      rotate(55deg)
+      scale(0.92);
+  }
+}
+
+
+@keyframes particlesMove {
+
+  0% {
+    transform: translate(0, 0);
+
+    opacity: 0.35;
+  }
+
+  50% {
+    transform: translate(8px, -10px);
+
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translate(-5px, 8px);
+
+    opacity: 0.45;
+  }
+}
+
+
+@keyframes particlePulse {
+
+  0%,
+  100% {
+    transform: scale(0.7);
+
+    opacity: 0.55;
+  }
+
+  50% {
+    transform: scale(1.35);
+
+    opacity: 1;
+  }
+}
+
+
+@keyframes coreBreathing {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.025);
+  }
+}
+
+
+@keyframes innerRotation {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes pulsePoint {
+
+  0%,
+  100% {
+    transform:
+      translateX(-50%)
+      scale(0.75);
+
+    opacity: 0.55;
+  }
+
+  50% {
+    transform:
+      translateX(-50%)
+      scale(1.3);
+
+    opacity: 1;
+  }
+}
+
+
+@keyframes numberIncrease {
+
+  0% {
+    transform: scale(0.94);
+  }
+
+  60% {
+    transform: scale(1.06);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+@keyframes numberDecrease {
+
+  0% {
+    transform: scale(1.05);
+  }
+
+  60% {
+    transform: scale(0.96);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+@keyframes numberReset {
+
+  0% {
+    transform:
+      rotate(-4deg)
+      scale(0.92);
+
+    opacity: 0.4;
+  }
+
+  60% {
+    transform:
+      rotate(2deg)
+      scale(1.04);
+
+    opacity: 1;
+  }
+
+  100% {
+    transform:
+      rotate(0)
+      scale(1);
+  }
+}
+
+
+@keyframes statusPulse {
+
+  0%,
+  100% {
+    opacity: 0.4;
+
+    transform: scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform: scale(1.2);
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}
